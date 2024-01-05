@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ooga Booga Translator</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+        }
+        #inputText, #outputText {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ooga Booga Translator</h1>
+    <textarea id="inputText" placeholder="Type your text here"></textarea><br>
+    <button onclick="translate()">Translate to Ooga Booga</button><br>
+    <textarea id="outputText" readonly></textarea>
+
+    <script>
+        function translate() {
+            const inputText = document.getElementById('inputText').value;
+            const outputText = oogaBoogaTranslator(inputText);
+            document.getElementById('outputText').value = outputText;
+        }
+
+        function oogaBoogaTranslator(input) {
+            // Implement your Ooga Booga translation logic here
+            // For simplicity, let's just add "ooga booga" before each word
+            const words = input.split(' ');
+            const translatedWords = words.map(word => 'ooga booga ' + word);
+            return translatedWords.join(' ');
+        }
+    </script>
+</body>
+</html>
